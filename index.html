@@ -16,12 +16,48 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript" src="https://yuji-k64613.github.io/jmjsApi/v/0.1/js/jmjsApi.js" charset="UTF-8" ></script>
+
+    <script type="text/javascript">
+        <!-- 初期化 -->
+        window.onload = function() {
+            initJmj(
+                {
+                    // キャンバス
+                    canvas: document.getElementById("canvas")
+                }
+            );
+        }
+
+        function startJuggling51(){
+            jmj.startJuggling(
+                {
+                    // サイトスワップを指定
+                    siteswap: "51",
+                    // サイトスワップを非表示
+                    showSiteswap: false
+                }
+            );
+        }
+        function startJuggling534(){
+            jmj.startJuggling(
+                {
+                    // サイトスワップを指定
+                    siteswap: "534",
+                    // サイトスワップを表示
+                    showSiteswap: true
+                }
+            );
+        }
+    </script>
 </head>
 <body>
 <div class="container">
 <ul class="nav nav-tabs">
     <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
     <li><a href="#jmjs" data-toggle="tab">JuggleMaster(JavaScript版)</a></li>
+    <li><a href="#jmjsApi" data-toggle="tab">JuggleMasterAPI(JavaScript版)</a></li>
     <li><a href="#jman" data-toggle="tab">JuggleMaster(Android版)</a></li>
 </ul>
 
@@ -35,6 +71,8 @@
         </div>
         <div class="panel-body">
             <ul>
+                <li>セバスちゃんのシンプルサイトスワップエディター改良版をJuggleMasterAPI対応しました。<a href="http://yuji-k64613.github.io/jmjs/siteswap_editor.html">http://yuji-k64613.github.io/jmjs/siteswap_editor.html</a>(2019/8/27)
+                <li>JuggleMasterAPI Ver0.1を公開しました。(2019/8/27)
                 <li>セバスちゃんのシンプルサイトスワップエディター改良版を元に、エディターで編集したサイトスワップをJuggleMasterで表示させるようにしました。<a href="http://yuji-k64613.github.io/jmjs/siteswap_editor.html">http://yuji-k64613.github.io/jmjs/siteswap_editor.html</a>(2018/10/8)
                 <li>JuggleMaster JavaScriptの短縮URLを変更しました。<a href="http://goo.gl/QW5yO0">http://goo.gl/QW5yO0</a>(2016/10/9)
                 <li>JuggleMaster JavaScriptのURLを変更しました。http://yuji-k64613.github.io/jmjs/jmjs.html(2016/10/9)
@@ -205,6 +243,59 @@
                         <li>初期バージョン
                     </ul>
             </ul>
+        </div>
+    </div>
+</div>
+<div class="tab-pane" id="jmjsApi">
+    <h1>JavaScript版 JuggleMasterAPI Ver0.1</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">JuggleMasterAPIとは</h2>
+                </div>
+                <div class="panel-body">
+                    「JavaScript版 JuggleMaster Ver1.4.1」を元に、JuggleMasterをHTML内に埋め込んで利用する事を目的にAPI化したものです。
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">ソース</h2>
+                </div>
+                <a href="https://github.com/yuji-k64613/jmjsApi">ここ</a>にあります。
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">サンプル</h2>
+                </div>
+                <div class="panel-body">
+                    <a href="https://yuji-k64613.github.io/jmjsApi/sample.html">サンプル</a>
+                    <div align="center">
+            			<canvas id="canvas" class="canvas" width="480px" height="400px" />
+            		</div>
+
+            		<!-- 起動、停止のサンプル -->
+            		<div align="center">
+            			<input type="button" value="51" onclick='startJuggling51()' />
+            			<input type="button" value="534" onclick='startJuggling534()' />
+            			<input type="button" value="stop" onclick='jmj.stopJuggling()' />
+            		</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">更新履歴</h2>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>Ver0.1(2019/8/27)
+                            <ul>
+                                <li>公開
+                            </ul>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
